@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/13 15:37:13 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/13 16:09:55 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	write(2, "Error\n", 6);
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
 
