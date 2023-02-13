@@ -6,7 +6,7 @@
 #    By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 16:17:47 by tnam              #+#    #+#              #
-#    Updated: 2023/02/12 17:16:43 by tnam             ###   ########.fr        #
+#    Updated: 2023/02/13 14:06:57 by tnam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ LIBFT_C			=	-L$(LIBFT_DIR) -lft
 INCLUDES		=	includes/
 
 SRCS_M			=	srcs/push_swap.c					\
+					srcs/push_swap_utils.c
 									
 SRCS_B			=	
 					
