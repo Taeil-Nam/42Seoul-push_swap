@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/14 21:49:25 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/14 22:08:06 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@ void	ft_error(void)
 {
 	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
+}
+
+static void	ft_init_atoi_variables(t_atoi *atoi)
+{
+	atoi->i = 0;
+	atoi->sign = 1;
+	atoi->sign_count = 0;
+	atoi->result = 0;
 }
 
 long	ft_argv_to_int(char *s)
@@ -43,14 +51,6 @@ long	ft_argv_to_int(char *s)
 			ft_error();
 	}
 	return (atoi.sign * atoi.result);
-}
-
-void	ft_init_atoi_variables(t_atoi *atoi)
-{
-	atoi->i = 0;
-	atoi->sign = 1;
-	atoi->sign_count = 0;
-	atoi->result = 0;
 }
 
 void	ft_check_dup_nums(t_var *var, t_stack *s_a)
