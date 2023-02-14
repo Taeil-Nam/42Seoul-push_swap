@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/13 16:09:55 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/14 13:03:16 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,44 +18,38 @@ void	ft_error(void)
 	exit(EXIT_FAILURE);
 }
 
-long	ft_argv_to_int(t_var *var, size_t j)
+long	ft_argv_to_int(char *s)
 {
-	size_t	i;
-	int		sign;
-	long	result;
+	t_atoi	atoi;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (var->argv[j][i] == '\t' || var->argv[j][i] == '\n'
-		|| var->argv[j][i] == '\v' || var->argv[j][i] == '\f'
-		|| var->argv[j][i] == '\r' || var->argv[j][i] == ' ')
-		i++;
-	i = ft_check_sign(var, j, i, &sign);
-	while (var->argv[j][i] != '\0')
+	ft_init_atoi_variables(&atoi);
+	while (s[atoi.i] == '\t' || s[atoi.i] == '\n' || s[atoi.i] == '\v'
+		|| s[atoi.i] == '\f' || s[atoi.i] == '\r' || s[atoi.i] == ' ')
+		atoi.i++;
+	while (s[atoi.i] == '+' || s[atoi.i] == '-')
 	{
-		if ('0' <= var->argv[j][i] && var->argv[j][i] <= '9')
-			result = (result * 10) + (var->argv[j][i++] - '0');
+		if (s[atoi.i++] == '-')
+			atoi.sign = -1;
+		atoi.sign_count++;
+		if (atoi.sign_count == 2)
+			ft_error();
+	}
+	while (s[atoi.i] != '\0')
+	{
+		if ('0' <= s[atoi.i] && s[atoi.i] <= '9')
+			atoi.result = (atoi.result * 10) + (s[atoi.i++] - '0');
 		else
 			ft_error();
 	}
-	return (sign * result);
+	return (atoi.sign * atoi.result);
 }
 
-size_t	ft_check_sign(t_var *var, size_t j, size_t i, int *sign)
+void	ft_init_atoi_variables(t_atoi *atoi)
 {
-	int		sign_count;
-
-	sign_count = 0;
-	while (var->argv[j][i] == '+' || var->argv[j][i] == '-')
-	{
-		if (var->argv[j][i++] == '-')
-			*sign = -1;
-		sign_count++;
-		if (sign_count == 2)
-			ft_error();
-	}
-	return (i);
+	atoi->i = 0;
+	atoi->sign = 1;
+	atoi->sign_count = 0;
+	atoi->result = 0;
 }
 
 void	ft_check_dup_nums(t_var *var, t_s_a *s_a)

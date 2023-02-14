@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/13 15:41:09 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/14 13:03:23 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,17 @@ typedef struct s_var
 	long		num_l;
 }				t_var;
 
+typedef struct s_atoi
+{
+	size_t		i;
+	int			sign;
+	int			sign_count;
+	long		result;
+}				t_atoi;
+
 void		ft_error(void);
-long		ft_argv_to_int(t_var *var, size_t j);
-size_t		ft_check_sign(t_var *var, size_t j, size_t i, int *sign);
+long		ft_argv_to_int(char *s);
+void		ft_init_atoi_variables(t_atoi *atoi);
 void		ft_check_dup_nums(t_var *var, t_s_a *s_a);
 
 #endif
