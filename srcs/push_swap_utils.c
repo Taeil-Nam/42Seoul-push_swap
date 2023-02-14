@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/14 13:03:16 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/14 21:49:25 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ long	ft_argv_to_int(char *s)
 		atoi.i++;
 	while (s[atoi.i] == '+' || s[atoi.i] == '-')
 	{
-		if (s[atoi.i++] == '-')
-			atoi.sign = -1;
 		atoi.sign_count++;
 		if (atoi.sign_count == 2)
 			ft_error();
+		if (s[atoi.i] == '-')
+			atoi.sign = -1;
+		atoi.i++;
 	}
 	while (s[atoi.i] != '\0')
 	{
@@ -52,7 +53,7 @@ void	ft_init_atoi_variables(t_atoi *atoi)
 	atoi->result = 0;
 }
 
-void	ft_check_dup_nums(t_var *var, t_s_a *s_a)
+void	ft_check_dup_nums(t_var *var, t_stack *s_a)
 {
 	size_t	i;
 	size_t	j;
@@ -63,7 +64,7 @@ void	ft_check_dup_nums(t_var *var, t_s_a *s_a)
 	{
 		while (i < var->total_num_count)
 		{
-			if (s_a->nums_v[j] == s_a->nums_v[i])
+			if (s_a->vector[j] == s_a->vector[i])
 				ft_error();
 			i++;
 		}

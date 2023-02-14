@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/14 13:03:23 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/14 21:45:58 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define NULLPTR 0
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
+# define TRUE 1
+# define FALSE 0
 
-typedef struct s_stack_a
+typedef struct s_stack
 {
-	int	*nums_v;
-}		t_s_a;
-
-typedef struct s_stack_b
-{
-	int	*nums_v;
-}		t_s_b;
+	int		*vector;
+	size_t	size;
+}			t_stack;
 
 typedef struct s_var
 {
@@ -50,6 +45,6 @@ typedef struct s_atoi
 void		ft_error(void);
 long		ft_argv_to_int(char *s);
 void		ft_init_atoi_variables(t_atoi *atoi);
-void		ft_check_dup_nums(t_var *var, t_s_a *s_a);
+void		ft_check_dup_nums(t_var *var, t_stack *s_a);
 
 #endif
