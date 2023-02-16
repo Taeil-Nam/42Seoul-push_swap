@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/16 19:11:56 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/16 21:11:03 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 typedef struct s_stack
 {
-	int		*vector;
-	int		size;
+	int		*array;
+	int		max_size;
 	int		top;
 	int		bottom;
 }			t_stack;
@@ -44,6 +44,7 @@ typedef struct s_atoi
 
 void		init_variables(int argc, char *argv[], t_var *var);
 void		init_stack(t_var *var, t_stack *s_a, t_stack *s_b);
+int			init_get_stack_size(t_var *var);
 void		make_stack_a(t_var *var, t_stack *s_a);
 
 void		error(void);

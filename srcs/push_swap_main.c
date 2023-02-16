@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:22 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/16 19:23:19 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/16 21:10:52 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h> //
 int	main(int argc, char *argv[])
 {
 	t_stack	s_a;
@@ -21,10 +20,6 @@ int	main(int argc, char *argv[])
 	init_variables(argc, argv, &var);
 	init_stack(&var, &s_a, &s_b);
 	make_stack_a(&var, &s_a);
-	for (int i = 0; i < s_a.size; i++)
-	{
-		printf("%d\n", s_a.vector[i]);
-	}
 	return (0);
 }
 
