@@ -6,66 +6,77 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/14 22:08:06 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/16 19:33:01 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_error(void)
+void	init_variables(int argc, char *argv[], t_var *var)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	var->argc = argc;
+	var->argv = argv;
 }
 
-static void	ft_init_atoi_variables(t_atoi *atoi)
+void	init_stack(t_var *var, t_stack *s_a, t_stack *s_b)
 {
-	atoi->i = 0;
-	atoi->sign = 1;
-	atoi->sign_count = 0;
-	atoi->result = 0;
+	s_a->vector = (int *)malloc(sizeof(int) * var->argc - 1);
+	if (s_a == NULL)
+		exit(EXIT_FAILURE);
+	s_b->vector = (int *)malloc(sizeof(int) * var->argc - 1);
+	if (s_b == NULL)
+		exit(EXIT_FAILURE);
+	s_a->size = 0;
+	s_b->size = 0;
+	s_a->top = -1;
+	s_b->top = -1;
+	s_a->bottom = 0;
+	s_b->bottom = 0;
 }
 
-long	ft_argv_to_int(char *s)
+void	make_stack_a(t_var *var, t_stack *s_a)
 {
-	t_atoi	atoi;
+	int		argv_idx;
+	int		num_idx;
+	int		v_idx;
+	char	**nums;
+	long	num_l;
 
-	ft_init_atoi_variables(&atoi);
-	while (s[atoi.i] == '\t' || s[atoi.i] == '\n' || s[atoi.i] == '\v'
-		|| s[atoi.i] == '\f' || s[atoi.i] == '\r' || s[atoi.i] == ' ')
-		atoi.i++;
-	while (s[atoi.i] == '+' || s[atoi.i] == '-')
+	argv_idx = 1;
+	v_idx = 0;
+	while (argv_idx < var->argc)
 	{
-		atoi.sign_count++;
-		if (atoi.sign_count == 2)
-			ft_error();
-		if (s[atoi.i] == '-')
-			atoi.sign = -1;
-		atoi.i++;
+		nums = ft_split(var->argv[argv_idx], ' ');
+		num_idx = 0;
+		while (nums[num_idx])
+		{
+			num_l = make_int(nums[num_idx]);
+			if (num_l < INT32_MIN || num_l > INT32_MAX)
+				error();
+			s_a->vector[v_idx] = num_l;
+			s_a->size++;
+			s_a->top++;
+			v_idx++;
+			num_idx++;
+		}
+		argv_idx++;
 	}
-	while (s[atoi.i] != '\0')
-	{
-		if ('0' <= s[atoi.i] && s[atoi.i] <= '9')
-			atoi.result = (atoi.result * 10) + (s[atoi.i++] - '0');
-		else
-			ft_error();
-	}
-	return (atoi.sign * atoi.result);
+	check_dup_nums(var, s_a);
 }
 
-void	ft_check_dup_nums(t_var *var, t_stack *s_a)
+void	check_dup_nums(t_var *var, t_stack *s_a)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 
 	j = 0;
 	i = j + 1;
-	while (j < var->total_num_count - 1)
+	while (j < var->argc - 2)
 	{
-		while (i < var->total_num_count)
+		while (i < var->argc - 1)
 		{
 			if (s_a->vector[j] == s_a->vector[i])
-				ft_error();
+				error();
 			i++;
 		}
 		j++;
