@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.c                                  :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 17:19:26 by tnam             ###   ########.fr       */
+/*   Created: 2022/11/15 16:40:28 by tnam              #+#    #+#             */
+/*   Updated: 2022/11/30 11:26:58 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	stack_push(t_stack *stack, int data)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	stack->top++;
-	stack->array[stack->top] = data;
-}
+	int		start;
+	int		end;
+	char	*result;
 
-void	stack_print(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i <= stack->top)
-	{
-		ft_printf("[%d] : %d\n", i, stack->array[i]);
-		i++;
-	}
-	ft_printf("Size = %d\n", stack->max_size);
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	while (end >= 0 && ft_strchr(set, s1[end]))
+		end--;
+	if (start > end)
+		return (ft_strdup(""));
+	result = ft_substr(s1, start, end - start + 1);
+	return (result);
 }

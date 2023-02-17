@@ -6,18 +6,20 @@
 #    By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 16:17:47 by tnam              #+#    #+#              #
-#    Updated: 2023/02/16 19:31:07 by tnam             ###   ########.fr        #
+#    Updated: 2023/02/17 17:14:32 by tnam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
+
 CC				=	cc
 CFLAG			=	-Wall -Wextra -Werror
+
 RM				=	rm -f
 
-LIBFT_DIR		=	libft/
-LIBFT			=	libft.a
-LIBFT_C			=	-L$(LIBFT_DIR) -lft
+LIBFTPRINTF_DIR	=	ft_printf/
+LIBFTPRINTF		=	libftprintf.a
+LIBFTPRINTF_C	=	-L$(LIBFTPRINTF_DIR) -lftprintf
 
 INCLUDES		=	includes/
 
@@ -44,21 +46,21 @@ all: $(NAME)
 bonus: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) all
-	$(CC) $(CFLAG) -I$(INCLUDES) $(OBJS) $(LIBFT_C) -o $(NAME)
+	$(MAKE) all -C $(LIBFTPRINTF_DIR) 
+	$(CC) $(CFLAG) -I$(INCLUDES) $(OBJS) $(LIBFTPRINTF_C) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAG) -I$(INCLUDES) -c $< -o $@
 
 clean :
-	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) clean -C $(LIBFTPRINTF_DIR)
 	$(RM) $(OBJS_M) $(OBJS_B)
 
 fclean : clean
-	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) fclean -C $(LIBFTPRINTF_DIR)
 	$(RM) $(NAME)
 
-re:
+re :
 	make fclean
 	make all
 

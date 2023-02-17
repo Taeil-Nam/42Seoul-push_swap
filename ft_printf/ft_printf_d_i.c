@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.c                                  :+:      :+:    :+:   */
+/*   ft_printf_d_i.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 17:19:26 by tnam             ###   ########.fr       */
+/*   Created: 2022/11/28 18:34:00 by tnam              #+#    #+#             */
+/*   Updated: 2022/12/06 15:50:32 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "ft_printf.h"
 
-void	stack_push(t_stack *stack, int data)
+int	ft_printf_d_i(va_list vargs_ptr)
 {
-	stack->top++;
-	stack->array[stack->top] = data;
-}
+	int			print_count;
+	int			num;
+	long long	num_l;
 
-void	stack_print(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i <= stack->top)
+	num = va_arg(vargs_ptr, int);
+	ft_putnbr_fd(num, 1);
+	num_l = num;
+	print_count = 0;
+	if (num_l == 0)
+		print_count = 1;
+	if (num_l < 0)
 	{
-		ft_printf("[%d] : %d\n", i, stack->array[i]);
-		i++;
+		num_l *= -1;
+		print_count++;
 	}
-	ft_printf("Size = %d\n", stack->max_size);
+	while (num_l != 0)
+	{
+		num_l /= 10;
+		print_count++;
+	}
+	return (print_count);
 }

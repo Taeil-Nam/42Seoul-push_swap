@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.c                                  :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 17:19:26 by tnam             ###   ########.fr       */
+/*   Created: 2022/11/10 20:16:07 by tnam              #+#    #+#             */
+/*   Updated: 2022/11/24 14:54:45 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	stack_push(t_stack *stack, int data)
+char	*ft_strrchr(const char *s, int c)
 {
-	stack->top++;
-	stack->array[stack->top] = data;
-}
+	int		i;
 
-void	stack_print(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i <= stack->top)
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		ft_printf("[%d] : %d\n", i, stack->array[i]);
-		i++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
 	}
-	ft_printf("Size = %d\n", stack->max_size);
+	return (0);
 }

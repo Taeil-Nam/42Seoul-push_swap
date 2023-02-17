@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 17:19:26 by tnam             ###   ########.fr       */
+/*   Created: 2022/11/15 21:54:05 by tnam              #+#    #+#             */
+/*   Updated: 2022/11/22 22:26:40 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	stack_push(t_stack *stack, int data)
+void	ft_putnbr_recursion(long long n, int fd)
 {
-	stack->top++;
-	stack->array[stack->top] = data;
+	char	c;
+
+	if (n >= 10)
+		ft_putnbr_recursion(n / 10, fd);
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
 }
 
-void	stack_print(t_stack *stack)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	long long	n_l;
 
-	i = 0;
-	while (i <= stack->top)
+	if (fd < 0)
+		return ;
+	n_l = (long long)n;
+	if (n < 0)
 	{
-		ft_printf("[%d] : %d\n", i, stack->array[i]);
-		i++;
+		n_l *= -1;
+		write(fd, "-", 1);
 	}
-	ft_printf("Size = %d\n", stack->max_size);
+	ft_putnbr_recursion(n_l, fd);
 }

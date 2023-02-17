@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.c                                  :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 17:19:26 by tnam             ###   ########.fr       */
+/*   Created: 2022/11/15 21:49:29 by tnam              #+#    #+#             */
+/*   Updated: 2022/11/22 22:26:19 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	stack_push(t_stack *stack, int data)
+void	ft_putendl_fd(char *s, int fd)
 {
-	stack->top++;
-	stack->array[stack->top] = data;
-}
+	size_t	len;
 
-void	stack_print(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i <= stack->top)
-	{
-		ft_printf("[%d] : %d\n", i, stack->array[i]);
-		i++;
-	}
-	ft_printf("Size = %d\n", stack->max_size);
+	if (fd < 0)
+		return ;
+	len = ft_strlen(s);
+	write (fd, s, len);
+	write (fd, "\n", 1);
 }
