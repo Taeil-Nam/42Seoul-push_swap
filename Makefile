@@ -6,7 +6,7 @@
 #    By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 16:17:47 by tnam              #+#    #+#              #
-#    Updated: 2023/02/17 17:14:32 by tnam             ###   ########.fr        #
+#    Updated: 2023/02/18 17:09:20 by tnam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,11 @@ LIBFTPRINTF_C	=	-L$(LIBFTPRINTF_DIR) -lftprintf
 
 INCLUDES		=	includes/
 
-SRCS_M			=	srcs/push_swap_main.c		\
-					srcs/push_swap_init.c		\
-					srcs/push_swap_atoi.c		\
-					srcs/push_swap_stack.c		\
+SRCS_M			=	srcs/push_swap_main.c			\
+					srcs/push_swap_init.c			\
+					srcs/push_swap_atoi.c			\
+					srcs/push_swap_stack.c			\
+					srcs/push_swap_instruction_p.c	\
 									
 SRCS_B			=	
 					

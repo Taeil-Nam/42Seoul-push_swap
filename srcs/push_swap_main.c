@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:22 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 16:19:52 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 17:16:19 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int	main(int argc, char *argv[])
 	init_variables(argc, argv, &var);
 	init_stack(&var, &s_a, &s_b);
 	make_stack_a(&var, &s_a);
+	stack_print(&s_a);
+	ft_printf("-----\n");
+	stack_print(&s_b);
 	return (0);
 }
 
