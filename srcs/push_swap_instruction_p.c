@@ -6,13 +6,13 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:39:43 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 17:19:16 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 18:01:38 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	instuction_pa(t_stack *s_a, t_stack *s_b)
+void	instruction_pa(t_stack *s_a, t_stack *s_b)
 {
 	int	temp;
 
@@ -23,7 +23,7 @@ void	instuction_pa(t_stack *s_a, t_stack *s_b)
 	stack_push(s_a, temp);
 }
 
-void	instuction_pb(t_stack *s_a, t_stack *s_b)
+void	instruction_pb(t_stack *s_a, t_stack *s_b)
 {
 	int	temp;
 

@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 17:19:32 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 18:06:20 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	stack_print(t_stack *stack)
 		ft_printf("[%d] : %d\n", stack->top - i, stack->array[stack->top - i]);
 		i++;
 	}
+	ft_printf("\nTop : %d\n", stack->top);
 }
 
 bool	stack_is_empty(t_stack *stack)

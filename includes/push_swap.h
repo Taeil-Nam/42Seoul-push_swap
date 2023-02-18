@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 17:49:52 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 18:01:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,19 @@ void	stack_print(t_stack *stack);
 bool	stack_is_empty(t_stack *stack);
 bool	stack_is_full(t_stack *stack);
 
-void	instuction_pa(t_stack *s_a, t_stack *s_b);
-void	instuction_pb(t_stack *s_a, t_stack *s_b);
+void	instruction_pa(t_stack *s_a, t_stack *s_b);
+void	instruction_pb(t_stack *s_a, t_stack *s_b);
 
-void	instuction_sa(t_stack *s_a);
-void	instuction_sb(t_stack *s_b);
-void	instuction_ss(t_stack *s_a, t_stack *s_b)
+void	instruction_sa(t_stack *s_a);
+void	instruction_sb(t_stack *s_b);
+void	instruction_ss(t_stack *s_a, t_stack *s_b);
 
-void	instuction_ra(t_stack *s_a);
-void	instuction_rb(t_stack *s_b);
-void	instuction_rr(t_stack *s_a, t_stack *s_b)
+void	instruction_ra(t_stack *s_a);
+void	instruction_rb(t_stack *s_b);
+void	instruction_rr(t_stack *s_a, t_stack *s_b);
 
-void	instuction_rra(t_stack *s_a);
-void	instuction_rrb(t_stack *s_b);
-void	instuction_rrr(t_stack *s_a, t_stack *s_b)
+void	instruction_rra(t_stack *s_a);
+void	instruction_rrb(t_stack *s_b);
+void	instruction_rrr(t_stack *s_a, t_stack *s_b);
 
 #endif
