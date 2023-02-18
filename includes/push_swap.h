@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 17:21:48 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 17:49:52 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ void	instuction_pb(t_stack *s_a, t_stack *s_b);
 
 void	instuction_sa(t_stack *s_a);
 void	instuction_sb(t_stack *s_b);
-void	instuction_ss(void);
+void	instuction_ss(t_stack *s_a, t_stack *s_b)
 
 void	instuction_ra(t_stack *s_a);
 void	instuction_rb(t_stack *s_b);
-void	instuction_rr(void);
+void	instuction_rr(t_stack *s_a, t_stack *s_b)
 
 void	instuction_rra(t_stack *s_a);
 void	instuction_rrb(t_stack *s_b);
-void	instuction_rrr(void);
+void	instuction_rrr(t_stack *s_a, t_stack *s_b)
 
 #endif
