@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 16:30:35 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 16:12:41 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 # define TRUE 1
 # define FALSE 0
@@ -57,6 +58,9 @@ void	init_atoi_variables(t_atoi *atoi);
 void	check_dup_nums(t_stack *s_a);
 
 void	stack_push(t_stack *stack, int data);
+void	stack_pop(t_stack *stack);
 void	stack_print(t_stack *stack);
+bool	stack_is_empty(t_stack *stack);
+bool	stack_is_full(t_stack *stack);
 
 #endif

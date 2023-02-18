@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/17 16:37:54 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 16:08:46 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	init_stack(t_var *var, t_stack *s_a, t_stack *s_b)
 {
 	s_a->max_size = init_get_stack_size(var);
 	s_b->max_size = s_a->max_size;
-	s_a->top = -1;
+	s_a->top = s_a->max_size - 1;
 	s_b->top = -1;
 	s_a->bottom = 0;
 	s_b->bottom = 0;
@@ -62,7 +62,9 @@ int	init_get_stack_size(t_var *var)
 void	make_stack_a(t_var *var, t_stack *s_a)
 {
 	long	num_l;
+	int		i;
 
+	i = 1;
 	var->argv_idx = 1;
 	while (var->argv_idx < var->argc)
 	{
@@ -73,9 +75,10 @@ void	make_stack_a(t_var *var, t_stack *s_a)
 			num_l = make_int(var->nums[var->num_idx]);
 			if (num_l < INT32_MIN || num_l > INT32_MAX)
 				error();
-			stack_push(s_a, num_l);
+			s_a->array[s_a->max_size - i] = num_l;
 			free(var->nums[var->num_idx]);
 			var->num_idx++;
+			i++;
 		}
 		free(var->nums);
 		var->argv_idx++;
