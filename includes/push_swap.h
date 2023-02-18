@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 16:12:41 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 16:49:55 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,20 @@ void	stack_pop(t_stack *stack);
 void	stack_print(t_stack *stack);
 bool	stack_is_empty(t_stack *stack);
 bool	stack_is_full(t_stack *stack);
+
+void	instuction_pa(t_stack *s_a, t_stack *s_b);
+void	instuction_pb(t_stack *s_a, t_stack *s_b);
+
+void	instuction_sa(t_stack *s_a, t_stack *s_b);
+void	instuction_sb(t_stack *s_a, t_stack *s_b);
+void	instuction_ss(t_stack *s_a, t_stack *s_b);
+
+void	instuction_ra(t_stack *s_a, t_stack *s_b);
+void	instuction_rb(t_stack *s_a, t_stack *s_b);
+void	instuction_rr(t_stack *s_a, t_stack *s_b);
+
+void	instuction_rra(t_stack *s_a, t_stack *s_b);
+void	instuction_rrb(t_stack *s_a, t_stack *s_b);
+void	instuction_rrr(t_stack *s_a, t_stack *s_b);
 
 #endif
