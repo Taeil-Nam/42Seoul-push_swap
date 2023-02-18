@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 19:31:11 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 17:11:40 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/18 17:19:32 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	stack_push(t_stack *stack, int data)
 {
-	if (stack_is_full(stack))
+	if (stack_is_full(stack) == TRUE)
 		return ;
 	stack->top++;
 	stack->array[stack->top] = data;
@@ -22,7 +22,7 @@ void	stack_push(t_stack *stack, int data)
 
 void	stack_pop(t_stack *stack)
 {
-	if (stack_is_empty(stack))
+	if (stack_is_empty(stack) == TRUE)
 		return ;
 	stack->top--;
 }
