@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:39:43 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/18 18:33:33 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/19 18:07:56 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	instruction_rra(t_stack *s_a)
 		i++;
 	}
 	s_a->array[s_a->top] = temp;
+	write(1, "rra\n", 4);
 }
 
 void	instruction_rrb(t_stack *s_b)
@@ -40,10 +41,29 @@ void	instruction_rrb(t_stack *s_b)
 		i++;
 	}
 	s_b->array[s_b->top] = temp;
+	write(1, "rrb\n", 4);
 }
 
 void	instruction_rrr(t_stack *s_a, t_stack *s_b)
 {
-	instruction_rra(s_a);
-	instruction_rrb(s_b);
+	int	temp;
+	int	i;
+
+	temp = s_a->array[s_a->bottom];
+	i = s_a->bottom;
+	while (i < s_a->top)
+	{
+		s_a->array[i] = s_a->array[i + 1];
+		i++;
+	}
+	s_a->array[s_a->top] = temp;
+	temp = s_b->array[s_b->bottom];
+	i = s_b->bottom;
+	while (i < s_b->top)
+	{
+		s_b->array[i] = s_b->array[i + 1];
+		i++;
+	}
+	s_b->array[s_b->top] = temp;
+	write(1, "rrr\n", 4);
 }
