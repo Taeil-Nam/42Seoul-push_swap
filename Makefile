@@ -6,7 +6,7 @@
 #    By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 16:17:47 by tnam              #+#    #+#              #
-#    Updated: 2023/02/18 18:33:44 by tnam             ###   ########.fr        #
+#    Updated: 2023/02/20 19:50:59 by tnam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS_M			=	srcs/push_swap_main.c			\
 					srcs/push_swap_instruction_s.c	\
 					srcs/push_swap_instruction_r.c	\
 					srcs/push_swap_instruction_rr.c	\
+					srcs/push_swap_algorithm.c		\
 									
 SRCS_B			=	
 					

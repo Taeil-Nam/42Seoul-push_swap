@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:39:43 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/19 18:13:12 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/20 19:32:13 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ void	instruction_ss(t_stack *s_a, t_stack *s_b)
 {
 	int	temp;
 
-	if (s_a->top < 1 && s_b->top >= 1)
-	{
-		temp = s_b->array[s_b->top];
-		s_b->array[s_b->top] = s_b->array[s_b->top - 1];
-		s_b->array[s_b->top - 1] = temp;
-	}
-	else if (s_b->top < 1 && s_a->top >= 1)
+	if (s_a->top >= 1 && s_b->top < 1)
 	{
 		temp = s_a->array[s_a->top];
 		s_a->array[s_a->top] = s_a->array[s_a->top - 1];
 		s_a->array[s_a->top - 1] = temp;
+	}
+	else if (s_b->top >= 1 && s_a->top < 1)
+	{
+		temp = s_b->array[s_b->top];
+		s_b->array[s_b->top] = s_b->array[s_b->top - 1];
+		s_b->array[s_b->top - 1] = temp;
 	}
 	else if (s_a->top >= 1 && s_b->top >= 1)
 	{
