@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:33:07 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/20 20:02:02 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/20 20:16:37 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	algorithm(t_stack *s_a, t_stack *s_b)
 			i++;
 		}
 
-		// 2. stack a의 가장 큰 수가 top으로 오도록 ra 수행.
+		// 2. stack a의 가장 작은 수가 top으로 오도록 ra 수행.
 		while (s_a->array[s_a->top] != min_num)
 			instruction_ra(s_a);
 
