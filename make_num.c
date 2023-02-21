@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 
 	srand(time(NULL));
 	for (int i = 0; i < count; i++)
-		printf("%d ", ((rand() % 256) << 24) + ((rand() % 256) << 16) + ((rand() % 256) << 8) + (rand() % 256));
+		printf("%d ", ((rand() & 0xFF) << 24) + ((rand() & 0xFF) << 16) + ((rand() & 0xFF) << 8) + (rand() & 0xFF));
 	printf("\n");
 
 	RAND_MAX;
