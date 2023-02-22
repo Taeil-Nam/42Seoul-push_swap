@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:33:07 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/21 15:06:16 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/22 21:45:02 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,17 @@
 
 void	algorithm(t_stack *s_a, t_stack *s_b)
 {
-	int	i;
-	int	min_num;
-	int	min_num_i;
+	/*
+	# 사용할 알고리즘 = 모래시계
+	## 모래시계 알고리즘 동작 과정
+	1. 스택 a에서 스택 b로 데이터들을 특정 조건에 맞게 옮긴다.
+	2. 스택 b에 저장된 데이터들의 형태가 모래시계처럼 나타난다.
+	3. 스택 b에서 가장 큰 데이터를 하나씩 찾아서 스택 a로 옮긴다.
+	4. 스택 a에 데이터들이 정렬이 완료된다.
 
-	// 4. stack a가 빌 때까지 1, 2, 3 과정 수행.
-	while (stack_is_empty(s_a) == FALSE)
-	{
-		// 1. stack a에서 가장 작은 수 찾기.
-		i = s_a->bottom + 1;
-		min_num = s_a->array[s_a->bottom];
-		min_num_i = 0;
-		while (i <= s_a->top)
-		{
-			if (s_a->array[i] < min_num)
-			{
-				min_num = s_a->array[i];
-				min_num_i = i;
-			}
-			i++;
-		}
-
-		// 2. stack a의 가장 작은 수가 top으로 오도록 ra or rra 수행.
-		// 2-1. 가장 작은 수가 스택의 top과 가까운 경우
-		if (min_num_i >= s_a->max_size / 2)
-		{
-			while (s_a->array[s_a->top] != min_num)
-				instruction_ra(s_a);
-		}
-		// 2-2. 가장 작은 수가 스택의 bottom과 가까운 경우
-		else
-		{
-			while (s_a->array[s_a->top] != min_num)
-				instruction_rra(s_a);
-		}
-		// 3. pb 수행.
-		instruction_pb(s_a, s_b);
-	}
-
-	// 5. stack b가 빌 때가지 pa 수행.
-	while (stack_is_empty(s_b) == FALSE)
-		instruction_pa(s_a, s_b);
+	## 모래시계 알고리즘 고려사항
+	- 스택 a의 데이터들을 확인하면서 자신이 몇 번째로 큰 데이터인지 인덱스화 시킨다.
+	Ex) 숫자 1, 2, 3, 5, 4가 저장된 경우 -> 0, 1, 2, 4, 3 으로 인덱스화 시킴.
+	- 스택 a에서 스택 b로 데이터를 어떤 조건으로 옮겨야 스택 b에 모래시계처럼 쌓일지 찾는다.
+	*/
 }
