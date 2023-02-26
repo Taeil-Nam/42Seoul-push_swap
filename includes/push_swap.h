@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/20 19:51:15 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/26 18:06:29 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	init_stack(t_var *var, t_stack *s_a, t_stack *s_b);
 int		init_get_stack_size(t_var *var);
 void	make_stack_a(t_var *var, t_stack *s_a);
 void	algorithm(t_stack *s_a, t_stack *s_b);
+void	sequencing_nums_in_stack(t_stack *s_a);
+void	bubble_sort(int *sorted, int sorted_size);
 
 void	error(void);
 
