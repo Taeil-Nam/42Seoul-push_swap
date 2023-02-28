@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/28 17:25:43 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/28 17:41:16 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,37 @@ typedef struct s_atoi
 	long	result;
 }			t_atoi;
 
+/* Main functions */
 void	init_variables(int argc, char *argv[], t_var *var);
 void	init_stack(t_var *var, t_stack *s_a, t_stack *s_b);
 int		init_get_stack_size(t_var *var);
 void	make_stack_a(t_var *var, t_stack *s_a);
+int		check_dup_nums_and_is_sorted(t_stack *s_a);
 void	sequencing_nums_in_stack_a(t_stack *s_a);
+void	execute_algorithm(t_stack *s_a, t_stack *s_b);
+void	error(void);
+
+/* Functions of atoi */
+long	make_int(char *s);
+void	init_atoi_variables(t_atoi *atoi);
+
+/* Functions of sequencing */
 void	bubble_sort(int *sorted, int sorted_size);
 void	change_nums_in_stack_to_sorted(t_stack *s_a, int *sorted);
-void	execute_algorithm(t_stack *s_a, t_stack *s_b);
+
+/* Functions of algorithm */
 void	stack_a_to_b(t_stack *s_a, t_stack *s_b);
 void	stack_b_to_a(t_stack *s_a, t_stack *s_b);
 int		get_max_num_index(t_stack *s_b);
 
-void	error(void);
-
-long	make_int(char *s);
-void	init_atoi_variables(t_atoi *atoi);
-int		check_dup_nums_and_is_sorted(t_stack *s_a);
-
+/* Functions of stack */
 void	stack_push(t_stack *stack, int data);
 void	stack_pop(t_stack *stack);
 void	stack_print(t_stack *stack);
 bool	stack_is_empty(t_stack *stack);
 bool	stack_is_full(t_stack *stack);
 
+/* Instructions of stack */
 void	instruction_pa(t_stack *s_a, t_stack *s_b);
 void	instruction_pb(t_stack *s_a, t_stack *s_b);
 
