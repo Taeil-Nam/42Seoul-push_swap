@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:22 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/27 20:09:10 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/28 15:17:01 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char *argv[])
 	init_variables(argc, argv, &var);
 	init_stack(&var, &s_a, &s_b);
 	make_stack_a(&var, &s_a);
-	algorithm(&s_a, &s_b);
+	sequencing_nums_in_stack_a(&s_a);
+	execute_algorithm(&s_a, &s_b);
 	return (0);
 }
 

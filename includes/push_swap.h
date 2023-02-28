@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/27 21:32:01 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/28 15:10:37 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 	int		max_size;
 	int		top;
 	int		bottom;
-	int		chunk;
+	int		div;
 }			t_stack;
 
 typedef struct s_var
@@ -51,11 +51,13 @@ void	init_variables(int argc, char *argv[], t_var *var);
 void	init_stack(t_var *var, t_stack *s_a, t_stack *s_b);
 int		init_get_stack_size(t_var *var);
 void	make_stack_a(t_var *var, t_stack *s_a);
-void	algorithm(t_stack *s_a, t_stack *s_b);
-void	sequencing_nums_in_stack(t_stack *s_a);
+void	sequencing_nums_in_stack_a(t_stack *s_a);
 void	bubble_sort(int *sorted, int sorted_size);
 void	change_nums_in_stack_to_sorted(t_stack *s_a, int *sorted);
 void	execute_algorithm(t_stack *s_a, t_stack *s_b);
+void	stack_a_to_b(t_stack *s_a, t_stack *s_b);
+void	stack_b_to_a(t_stack *s_a, t_stack *s_b);
+int		get_max_num_index(t_stack *s_b);
 
 void	error(void);
 
