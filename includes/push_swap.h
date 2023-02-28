@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:44 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/28 15:10:37 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/28 17:25:43 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	error(void);
 
 long	make_int(char *s);
 void	init_atoi_variables(t_atoi *atoi);
-void	check_dup_nums(t_stack *s_a);
+int		check_dup_nums_and_is_sorted(t_stack *s_a);
 
 void	stack_push(t_stack *stack, int data);
 void	stack_pop(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/28 15:37:06 by tnam             ###   ########.fr       */
+/*   Updated: 2023/02/28 17:26:52 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,25 +85,29 @@ void	make_stack_a(t_var *var, t_stack *s_a)
 		free(var->nums);
 		var->argv_idx++;
 	}
-	check_dup_nums(s_a);
 }
 
-void	check_dup_nums(t_stack *s_a)
+int	check_dup_nums_and_is_sorted(t_stack *s_a)
 {
 	int		i;
 	int		j;
+	int		sorted_flag;
 
 	i = 0;
 	j = i + 1;
+	sorted_flag = 1;
 	while (i < s_a->max_size - 1)
 	{
 		while (j < s_a->max_size)
 		{
 			if (s_a->array[i] == s_a->array[j])
 				error();
+			if (s_a->array[i] < s_a->array[j])
+				sorted_flag = 0;
 			j++;
 		}
 		i++;
 		j = i + 1;
 	}
+	return (sorted_flag);
 }
