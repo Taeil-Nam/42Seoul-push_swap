@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/28 17:26:52 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/01 19:10:01 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	init_stack(t_var *var, t_stack *s_a, t_stack *s_b)
 	s_b->top = -1;
 	s_a->bottom = 0;
 	s_b->bottom = 0;
-	s_a->div = 15;
-	s_b->div = 15;
 	s_a->array = (int *)malloc(sizeof(int) * s_a->max_size);
 	if (s_a == NULL)
 		exit(EXIT_FAILURE);
