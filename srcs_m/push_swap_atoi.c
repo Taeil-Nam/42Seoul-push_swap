@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 17:16:00 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/16 17:21:54 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/02 19:00:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ long	make_int(char *s)
 			atoi.sign = -1;
 		atoi.i++;
 	}
+	if (s[atoi.i] == '\0')
+		error();
 	while (s[atoi.i] != '\0')
 	{
 		if ('0' <= s[atoi.i] && s[atoi.i] <= '9')
