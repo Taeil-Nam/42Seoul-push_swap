@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:22 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/02 15:25:46 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/02 16:53:49 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ void	check_is_sorted(t_stack *s_a, t_stack *s_b)
 		i++;
 		j = i + 1;
 	}
-	if (sorted_flag == 1 && s_a->top == s_a->max_size - 1)
+	if (sorted_flag == 1 && stack_is_empty(s_b) == TRUE)
 		write(STDOUT_FILENO, "OK\n", 3);
-	else if (sorted_flag == 0 && s_a->top == s_a->max_size - 1)
+	else if (sorted_flag == 0 && stack_is_empty(s_b) == TRUE)
 		write(STDOUT_FILENO, "KO\n", 3);
 }
 
