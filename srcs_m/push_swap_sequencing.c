@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_algorithm.c                              :+:      :+:    :+:   */
+/*   push_swap_sequencing.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:33:07 by tnam              #+#    #+#             */
-/*   Updated: 2023/02/28 15:10:41 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/02 17:32:12 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	sequencing_nums_in_stack_a(t_stack *s_a)
 
 	sorted_size = s_a->max_size;
 	sorted = (int *)malloc(sizeof(int) * sorted_size);
+	if (sorted == NULL)
+		exit(EXIT_FAILURE);
 	i = 0;
 	j = 0;
 	while (i < sorted_size)
