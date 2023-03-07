@@ -6,11 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 17:16:00 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/07 17:03:40 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 18:23:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 long	make_int(char *s)
 {

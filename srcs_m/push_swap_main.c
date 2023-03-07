@@ -6,11 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:51:22 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/02 15:26:00 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 18:23:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char *argv[])
 {

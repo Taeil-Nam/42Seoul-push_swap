@@ -6,11 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:39:43 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/02 14:57:28 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 18:23:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 void	instruction_sa(t_stack *s_a)
 {

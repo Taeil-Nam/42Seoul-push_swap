@@ -6,11 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/07 16:53:50 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 18:23:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	init_variables(int argc, char *argv[], t_var *var)
 {

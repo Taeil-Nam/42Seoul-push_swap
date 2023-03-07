@@ -6,11 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:33:07 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/02 17:32:12 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 18:23:21 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	sequencing_nums_in_stack_a(t_stack *s_a)
 {
