@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:52:10 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/02 12:24:58 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 17:00:10 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ void	make_stack_a(t_var *var, t_stack *s_a)
 		while (var->nums[var->num_idx])
 		{
 			num_l = make_int(var->nums[var->num_idx]);
-			if (num_l < INT32_MIN || num_l > INT32_MAX)
-				error();
 			s_a->array[s_a->max_size - i] = num_l;
 			free(var->nums[var->num_idx]);
 			var->num_idx++;

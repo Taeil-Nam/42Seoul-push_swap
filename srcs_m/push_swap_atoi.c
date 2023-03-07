@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 17:16:00 by tnam              #+#    #+#             */
-/*   Updated: 2023/03/02 19:00:21 by tnam             ###   ########.fr       */
+/*   Updated: 2023/03/07 17:03:40 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ long	make_int(char *s)
 	while (s[atoi.i] == '\t' || s[atoi.i] == '\n' || s[atoi.i] == '\v'
 		|| s[atoi.i] == '\f' || s[atoi.i] == '\r' || s[atoi.i] == ' ')
 		atoi.i++;
-	while (s[atoi.i] == '+' || s[atoi.i] == '-')
+	if (s[atoi.i] == '+' || s[atoi.i] == '-')
 	{
-		atoi.sign_count++;
-		if (atoi.sign_count == 2)
-			error();
 		if (s[atoi.i] == '-')
 			atoi.sign = -1;
 		atoi.i++;
 	}
-	if (s[atoi.i] == '\0')
+	if (s[atoi.i] == '\0' || s[atoi.i] == '+' || s[atoi.i] == '-')
 		error();
 	while (s[atoi.i] != '\0')
 	{
 		if ('0' <= s[atoi.i] && s[atoi.i] <= '9')
 			atoi.result = (atoi.result * 10) + (s[atoi.i++] - '0');
 		else
+			error();
+		if (atoi.sign * atoi.result < INT32_MIN
+			|| atoi.sign * atoi.result > INT32_MAX)
 			error();
 	}
 	return (atoi.sign * atoi.result);
