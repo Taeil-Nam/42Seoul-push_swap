@@ -45,5 +45,5 @@ rrr : rra와 rrb를 동시에 수행한다.
 - make = Mandatory용 실행 파일 생성. (정렬 프로그램 생성)
 - make bonus = Bonus용 실행 파일 생성. (정렬되었는지 확인하는 checker 프로그램 생성)
 
-### 정렬 시각화 
+### 정렬 시각화 영상
 https://www.youtube.com/watch?v=3TVhgok0Z3s
