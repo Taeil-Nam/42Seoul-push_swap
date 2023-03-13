@@ -31,19 +31,19 @@ rrr : rra와 rrb를 동시에 수행한다.
 ![image](https://user-images.githubusercontent.com/67255013/218249775-49297774-feec-4b82-844d-41949b9d3934.png)
 - 명령어 12개를 사용하여 스택 a에 정수를 정렬했다.
 
-### 관련 개념
+## 관련 개념
 - 자료구조(Data Structure).
 - 알고리즘(Algorithm).
 - 시간 복잡도(Time Complexity), 공간 복잡도(Space Complexity).
 - 빅오 표기법(Big-O).
 
-### 개발 및 테스트 환경
+## 개발 및 테스트 환경
 - Intel CPU 기반 Mac.
 - MacOS Version = 12.6.2
 
-### 사용 방법
+## 사용 방법
 - make = Mandatory용 실행 파일 생성. (정렬 프로그램 생성)
 - make bonus = Bonus용 실행 파일 생성. (정렬되었는지 확인하는 checker 프로그램 생성)
 
-### 정렬 시각화 영상
+## 정렬 시각화 영상
 https://www.youtube.com/watch?v=3TVhgok0Z3s
